@@ -9,7 +9,7 @@ class Text:
 
     def __del__(self):
         # with open(self.path + ".edit", "w") as f:
-        with open(self.path, "w") as f:
+        with open(self.path, "w", encoding="utf8") as f:
             f.write( self.text )
 
     def get_val(self):
@@ -72,7 +72,7 @@ def script():
 
     for path in dir_list:
         log.info( "Path: %s handle", path )
-        with open(path) as f:
+        with open(path, encoding="utf8") as f:
             data = f.read()
 
         text = Text( data, path )
